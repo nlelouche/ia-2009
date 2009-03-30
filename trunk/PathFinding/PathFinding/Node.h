@@ -7,13 +7,23 @@ class Node{
 //-------------------------------------------------------------------------
 public:
 //-------------------------------
-	Node();
+	Node(int _cost);
 	~Node();
+//-------------------------------
+	Node* GetParent();
+	void SetParent(Node * _node);
+//-------------------------------
+	int GetTotalCost();
+	void SetTotalCost(int _parentCost);
 //-------------------------------------------------------------------------
 private:
 	Node * m_pkParent;
+	
 	bool m_bIsOpen;
 	bool m_bIsClosed;
+
+	int m_Cost;
+	int m_TotalCost;
 
 //-------------------------------------------------------------------------
 };

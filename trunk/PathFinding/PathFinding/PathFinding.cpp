@@ -1,6 +1,15 @@
 #include "PathFinding.h"
 //--------------------------------------------------------------
-PathFind::PathFind(){
+PathFind::PathFind()
+:
+m_pkPath(NULL),
+m_pkClosedNodes(NULL),
+m_pkOpenNodes(NULL),
+m_pkiPathIT(0),
+m_pkOpenNodesIT(0),
+m_pkClosedNodesIT(0)
+
+{
 	/***/
 }
 //--------------------------------------------------------------
