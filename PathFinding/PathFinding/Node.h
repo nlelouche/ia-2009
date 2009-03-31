@@ -7,7 +7,7 @@ class Node{
 //-------------------------------------------------------------------------
 public:
 //-------------------------------
-	Node(int _cost);
+	Node(int _cost,int _x, int _y);
 	~Node();
 //-------------------------------
 	Node* GetParent();
@@ -18,6 +18,7 @@ public:
 //-------------------------------------------------------------------------
 private:
 	Node * m_pkParent;
+
 	
 	bool m_bIsOpen;
 	bool m_bIsClosed;
@@ -25,6 +26,16 @@ private:
 	int m_Cost;
 	int m_TotalCost;
 
+	int m_x;
+	int m_y;
+
+public:
+	struct NodePosition{
+		int Initial_X;
+		int Initial_Y;
+		int Ending_X;
+		int Ending_Y;
+	};
 //-------------------------------------------------------------------------
 };
 //-------------------------------------------------------------------------

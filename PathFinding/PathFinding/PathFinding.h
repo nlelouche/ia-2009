@@ -1,4 +1,5 @@
 #pragma once
+#define LARGO_MAPA	5*5
 //-------------------------------------------------------------------------
 #include "Node.h"
 //-------------------------------------------------------------------------
@@ -9,7 +10,7 @@ class PathFind {
 //-------------------------------------------------------------------------
 public:
 //-------------------------------
-	PathFind();
+	PathFind(int * _map[],int _rows,int _cols);
 	~PathFind();
 //-------------------------------	
 	void OpenNodes(Node * _node); // Valid Adyacent Nodes.
@@ -17,13 +18,18 @@ public:
 //-------------------------------
 	bool ExistOpenNodes();
 	bool IsExitNode(Node *_node);
+	bool IsEndingNode(Node * _node);
 //-------------------------------
-	int LessValueNode();
+	Node * LessValueNode();
 //-------------------------------
 	list<Node*> GenerarCamino();
-
+//-------------------------------
+	void CalculateMap(Node * _initialNode, Node * _endingNode);
+//-------------------------------
 //-------------------------------------------------------------------------
 private:
+	int m_Map[LARGO_MAPA];
+
 	list<Node*>m_pkPath;
 	list<Node*>::iterator m_pkiPathIT;
 	
@@ -32,6 +38,8 @@ private:
 
 	list<Node*>m_pkClosedNodes;
 	list<Node*>::iterator m_pkClosedNodesIT;
+	
+	Node * m_CurrentNode;
 //-------------------------------------------------------------------------
 };
 //-----------------

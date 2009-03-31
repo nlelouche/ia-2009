@@ -1,6 +1,6 @@
 #include "Node.h"
 //-------------------------------------------------------------------------
-Node::Node(int _cost)
+Node::Node(int _cost,int _x, int _y)
 :
 m_TotalCost(0),
 m_Cost(0)
